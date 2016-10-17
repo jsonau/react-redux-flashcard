@@ -9,6 +9,7 @@ class Deck extends React.Component {
 	addCard(e){
 		e.preventDefault()
 		console.log(this.state.q + " ---> " + this.state.a)
+		this.props.addCard(this.props.deck.id, this.state.q, this.state.a)
 	}
 	handleCardInputQ(e){
 	    this.setState({q: e.target.value});

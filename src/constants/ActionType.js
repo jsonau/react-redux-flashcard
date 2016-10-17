@@ -3,3 +3,5 @@ export const EDIT_DECK   = 'EDIT_DECK';
 export const DELETE_DECK = 'DELETE_DECK';
 
 export const SELECT_DECK = 'SELECT_DECK';
+
+export const ADD_CARD = 'ADD_CARD';
