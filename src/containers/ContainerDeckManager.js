@@ -5,9 +5,9 @@ import { addDeck } from '../actions'
 
 const mapStateToProps = (state) => {
 	return {
-		decks: state.allIds.map(function(id){
-			console.log(state.byId[id])
-			return(state.byId[id])
+		decks: state.decks.allIds.map(function(id){
+			console.log(state.decks.byId[id])
+			return(state.decks.byId[id])
 		})
 	}
 }

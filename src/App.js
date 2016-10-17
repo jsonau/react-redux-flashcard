@@ -3,11 +3,11 @@ import ContainerDeckManager from './containers/ContainerDeckManager'
 import './App.css';
 import {Provider} from 'react-redux'
 import {createStore} from 'redux'
-import decks from './reducers/decks'
+import app from './reducers'
 
 class App extends Component {
   render() {
-    let store = createStore(decks);
+    let store = createStore(app);
     return (
       <Provider store={store}>
         <div className="App">
