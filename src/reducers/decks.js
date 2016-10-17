@@ -23,7 +23,8 @@ const deck = (state, action) => {
 		case ADD_DECK:
 			return {
 				id: action.id,
-				title: action.title
+				title: action.title,
+				cards: []
 			};
 		case ADD_CARD_TO_DECK:
 			return {
