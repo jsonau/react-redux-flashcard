@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_DECK, EDIT_DECK } from '../constants/ActionType'
+import { ADD_DECK, ADD_CARD_TO_DECK } from '../constants/ActionType'
 
 const initialState = {
 	"byId": {
@@ -25,6 +25,12 @@ const deck = (state, action) => {
 				id: action.id,
 				title: action.title
 			};
+		case ADD_CARD_TO_DECK:
+			return {
+				id: state.id,
+				title: state.title,
+				cards: state.cards.concat(action.cardId)
+			};
 		default:
 			return state;
 	}
@@ -37,6 +43,11 @@ const byId = (state=initialState.byId, action) =>{
 				...state,
 				[action.id]: deck(state[action.id], action)
 			};
+		case ADD_CARD_TO_DECK:
+			return {
+				...state,
+				[action.id]: deck(state[action.id], action)
+			}
 		default:
 			return state;
 	}

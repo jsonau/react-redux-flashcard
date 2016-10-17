@@ -8,7 +8,6 @@ class Deck extends React.Component {
 
 	addCard(e){
 		e.preventDefault()
-		console.log(this.state.q + " ---> " + this.state.a)
 		this.props.addCard(this.props.deck.id, this.state.q, this.state.a)
 	}
 	handleCardInputQ(e){
@@ -37,6 +36,15 @@ class Deck extends React.Component {
 
 					<input type="submit"/>
 				</form>
+
+				<div className="cardList">
+					{this.props.cards.map(card=>
+						<div className="card" key={card.id}>
+							<div className="question">Q: {card.q}</div>
+							<div className="answer">A: {card.a}</div>
+						</div>
+					)}
+				</div>
 			</div>
 		)
 	}
