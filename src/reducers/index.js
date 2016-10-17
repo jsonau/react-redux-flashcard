@@ -1,9 +1,11 @@
 import  decks  from './decks'
+import currentDeck from './currentDeck'
 import { combineReducers } from 'redux'
 
 
 const app = combineReducers({
-	decks
+	decks,
+	currentDeck
 })
 
 export default app;
