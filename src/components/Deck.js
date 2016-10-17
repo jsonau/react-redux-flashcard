@@ -7,8 +7,9 @@ class Deck extends React.Component {
 	}
 
 	addCard(e){
-		e.preventDefault()
-		this.props.addCard(this.props.deck.id, this.state.q, this.state.a)
+		e.preventDefault();
+		this.props.addCard(this.props.deck.id, this.state.q, this.state.a);
+		this.setState({q: '', a: ''});
 	}
 	handleCardInputQ(e){
 	    this.setState({q: e.target.value});
@@ -29,10 +30,10 @@ class Deck extends React.Component {
 				<form className="cardForm" onSubmit={this.addCard.bind(this)}>
 					<p>Fill the following to create new flash cards</p>
 					<label htmlFor="question">Q</label>
-					<input name="question" type="text" onChange={this.handleCardInputQ.bind(this)} />
+					<input name="question" type="text" value={this.state.q} onChange={this.handleCardInputQ.bind(this)} />
 
 					<label htmlFor="answer">A</label>
-					<input name="answer" type="text" onChange={this.handleCardInputA.bind(this)} />
+					<input name="answer" type="text" value={this.state.a} onChange={this.handleCardInputA.bind(this)} />
 
 					<input type="submit"/>
 				</form>
