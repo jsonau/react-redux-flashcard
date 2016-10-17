@@ -30,3 +30,12 @@
 .card {
   border:1px solid #CCC;
 }
+.deckList li{
+  padding:.4em;
+}
+
+.deckList .counter{
+  color:#FFF;
+  background-color:#cc317c;
+  padding:.2em;
+}

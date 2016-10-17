@@ -34,7 +34,7 @@ class DeckManager extends React.Component {
 
 				<ul className="deckList">
 					{this.props.decks.map(deck =>
-						<li key={deck.id} onClick={()=>this.props.selectDeck(deck.id)}>{deck.title}</li>
+						<li key={deck.id} onClick={()=>this.props.selectDeck(deck.id)}>{deck.title} <span className="counter">{deck.cards.length}</span></li>
 					)}
 				</ul>
 			</div>
