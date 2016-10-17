@@ -16,6 +16,8 @@ class DeckManager extends React.Component {
 		if (this.props.decks.map(function(d){ return d.title }).indexOf(this.state.title) >= 0) return;
 
 		this.props.newDeck(this.state.title);
+
+		this.setState({title: ''})
 	}
 
 	onInputChange(e){
@@ -26,7 +28,7 @@ class DeckManager extends React.Component {
 		return(
 			<div className="deckManager">
 				<form onSubmit={this.onNewDeckSubmit.bind(this)}>
-					<input type="text" placeholder="Give a title for a newdeck" onChange={this.onInputChange.bind(this)} />
+					<input type="text" value={this.state.title} placeholder="Give a title for a newdeck" onChange={this.onInputChange.bind(this)} />
 					<input type="submit"/>
 				</form>
 
