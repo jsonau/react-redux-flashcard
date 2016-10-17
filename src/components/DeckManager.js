@@ -8,9 +8,14 @@ class DeckManager extends React.Component {
 
 	onNewDeckSubmit(e){
 		e.preventDefault();
-		if (this.state.title === "") return;
-		this.props.newDeck(this.state.title);
 
+		// if given title is empty, dont proceed
+		if (this.state.title === "") return;
+
+		// if title is not unique, dont proceed!
+		if (this.props.decks.map(function(d){ return d.title }).indexOf(this.state.title) >= 0) return;
+
+		this.props.newDeck(this.state.title);
 	}
 
 	onInputChange(e){
