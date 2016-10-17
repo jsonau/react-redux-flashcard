@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import DeckManager from '../components/DeckManager'
+import { addDeck } from '../actions'
 
 
 const mapStateToProps = (state) => {
@@ -11,8 +12,18 @@ const mapStateToProps = (state) => {
 	}
 }
 
+const mapDispatchToProps = (dispatch) =>{
+	return {
+		newDeck:(title) =>{
+			dispatch(addDeck(title))
+		}
+	}
+}
+
+
 const ContainerDeckManager = connect(
-	mapStateToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(DeckManager)
 
 export default ContainerDeckManager

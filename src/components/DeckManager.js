@@ -9,9 +9,10 @@ class DeckManager extends React.Component {
 	onNewDeckSubmit(e){
 		e.preventDefault();
 		if (this.state.title === "") return;
-		console.log(this.state.title)
+		this.props.newDeck(this.state.title);
 
-	}	
+	}
+
 	onInputChange(e){
 	    this.setState({title: e.target.value});
 	}
